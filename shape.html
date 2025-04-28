@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .squre{
+            height: 40px;
+            width: 40px;
+        }
+        .circle{
+         
+        width: 100px;
+        height: 100px;
+        border:2px solid red;
+        display: none;
+        margin: 20px;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="squre" onclick="squre()"><br>
+    <div id="round" class="circle"></div>
+    <script>
+        function squre(){
+       
+            document.getElementById("round").style.display = "block";
+            document.getElementById("round").style.borderRadius = "100px";   
+        }
+    </script>
+</body>
+</html>

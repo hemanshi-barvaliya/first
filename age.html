@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <div>
+        <label>Enter your Date of Birth</label><br>
+        <input id="inputDob" type="date" value="1997-01-01">
+    </div>
+    <div>
+        <label>Current Date</label><br>
+        <input id="cdate" type="date" value="">
+    </div><br />
+
+    <button type="button" onclick="getDOB()"> Calculate</button>
+    <br />
+<label for="age" id="currentAge"></label>
+    <script>
+
+        function getDOB() {
+
+        let dobInput = document.getElementById('inputDob').value;
+        let currentDateInput = document.getElementById('cdate').value;
+                
+        let dob = new Date(dobInput);
+        let currentDate = new Date(currentDateInput);
+       
+
+        let age = currentDate.getFullYear() - dob.getFullYear();
+    
+      
+            let month;
+            let days;
+
+            if(currentDateInput == ""){
+                alert("please enter current date");
+                document.getElementById("currentAge").innerHTML = "" ;
+
+            }
+
+            if (currentDate.getMonth() < dob.getMonth()) {
+                month = dob.getMonth() - currentDate.getMonth();
+            } 
+            else {
+                month = currentDate.getMonth() - dob.getMonth();
+            }
+
+            if (currentDate.getDate() < dob.getDate()) {
+                days = dob.getDate() - currentDate.getDate();
+            } 
+            else 
+            {
+                days = currentDate.getDate() - dob.getDate();
+            }
+
+
+        document.getElementById('currentAge').innerHTML = "Your age is " +age + " years. "+month+" month. "+days+" days. ";
+     
+    }
+    
+   </script>
+</body>
+</html>

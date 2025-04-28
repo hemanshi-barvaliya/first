@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caclulator</title>
+</head>
+<style>
+    .box{
+        height: 70px;
+        width: 70px;
+    }
+    .box1{
+        height: 50px;
+        width: 290px;
+    }
+</style>
+<body>
+    <div>
+        <input class="box1" type="text" id="disp"> <br>
+
+        <input class="box" type="button" value="1" onclick="dis(this.value)">
+        <input class="box" type="button" value="2" onclick="dis(this.value)">
+        <input class="box" type="button" value="3" onclick="dis(this.value)">
+        <input class="box" type="button" value="+" onclick="sign(this.value)"><br>
+
+        <input class="box" type="button" value="4" onclick="dis(this.value)">
+        <input class="box" type="button" value="5" onclick="dis(this.value)">
+        <input class="box" type="button" value="6" onclick="dis(this.value)">
+        <input class="box" type="button" value="-" onclick="sign(this.value)"><br>
+
+        <input class="box" type="button" value="7" onclick="dis(this.value)">
+        <input class="box" type="button" value="8" onclick="dis(this.value)">
+        <input class="box" type="button" value="9" onclick="dis(this.value)">
+        <input class="box" type="button" value="*" onclick="sign(this.value)"><br>
+
+        <input class="box" type="button" value="0" onclick="dis(this.value)">
+        <input class="box" type="button" value="=" onclick="display()">
+        <input class="box" type="button" value="del" onclick="del()">
+        <input class="box" type="button" value="c" onclick="clr()"><br>
+    </div>
+</body>
+
+<script>
+   
+ 
+   let v1,v2,si,sum;
+        function dis(n){
+            document.getElementById('disp').value+=n;
+        }
+        function sign(c){
+            v1 = parseInt(document.getElementById('disp').value);
+            si=c;
+            document.getElementById('disp').value=" ";
+        }
+
+        function display(){
+            v2 = parseInt(document.getElementById('disp').value);
+
+      
+
+        if(si == '+')
+        {
+            let add=parseInt(v1)+parseInt(v2);
+            document.getElementById('disp').value= add;
+        }
+
+        if(si == '-')
+        {
+            let s=parseInt(v1)-parseInt(v2);
+            document.getElementById('disp').value=s;
+        }
+        if(si == '*')
+        {
+            let m=parseInt(v1)*parseInt(v2);
+            document.getElementById('disp').value= m;
+        }
+        if(si == '/')
+        {
+            let d=parseInt(v1)/parseInt(v2);
+            document.getElementById('disp').value= d;
+        }
+    }
+
+    function clr(){
+        document.getElementById('disp').value = ' ';
+    }
+
+    function del(){
+
+        var input = document.getElementById('disp');
+        input.value = input.value.slice(0,-1);
+    }
+</script>
+</html>

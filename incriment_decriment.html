@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="+" onclick="dis('+')">
+    <span id="show">0</span>
+    <input type="button" value="-" onclick="dis('-')">
+    <script>
+        function dis(n){
+            let a= parseInt(document.getElementById("show").innerHTML);
+
+            if(n=='+'){
+                a++;
+                document.getElementById("show").innerHTML=a;
+            }
+            if(n=='-'){
+                a--;
+                document.getElementById("show").innerHTML=a;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 20px;
+            border: none;
+        }
+    </style>
+</head>
+<body onload="dis()">
+     <input type="text" class="box" value="0"  id="hours"  readonly>
+     <input type="text" class="box" value=":">
+     <input type="text" class="box" value="0"  id="minutes" readonly>
+     <input type="text" class="box" value=":">
+     <input type="text" class="box" value="0"  id="seconds" readonly>
+
+     <script>
+         let ts=500;
+        function dis()
+        {
+            let hi = document.getElementById("hours");
+            let mi = document.getElementById("minutes");
+            let si = document.getElementById("seconds");
+
+            let a = setInterval(function(){
+
+                let hours = Math.floor(ts / 3600);
+                let minutes = Math.floor((ts % 3600) / 60);
+                let seconds = ts % 60;
+
+                hi.value=hours;
+                mi.value=minutes;
+                si.value=seconds;
+
+                ts--;
+
+                if( ts<0)
+            {
+                
+                clearInterval(a);
+                alert('time up');
+            }
+
+            },1000);
+
+        }
+
+     </script>
+</body>
+</html>
